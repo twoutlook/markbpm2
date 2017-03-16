@@ -1,4 +1,5 @@
 <?php
+echo "INDEX...";
 ini_set('display_errors', 1);
 error_reporting(~0);
 echo "bpm...??????";
@@ -14,15 +15,15 @@ echo "bpm...??????";
 //   )
 // XML;
 
-$db_username = "bpm";
-$db_password = "bpm";
+// $db_username = "bpm";
+// $db_password = "bpm";
 
-try{
-    $conn = new PDO("oci:dbname=".$tns,$db_username,$db_password);
-    echo "WORKING..."
-}catch(PDOException $e){
-    echo ($e->getMessage());
-}
+// try{
+//     $conn = new PDO("oci:dbname=".$tns,$db_username,$db_password);
+//     echo "WORKING..."
+// }catch(PDOException $e){
+//     echo ($e->getMessage());
+// }
 
 
 ?>
