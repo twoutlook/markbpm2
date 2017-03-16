@@ -1,8 +1,8 @@
 <?php
 
-echo "bpm";
+echo "bpm...";
 
-<?php  
+ 
   
 $conn = oci_connect('bpm', 'bpm', '//10.10.0.31/bpm)');  
   
@@ -20,4 +20,3 @@ if (!$conn) {
   
 }  
   
-?> 
