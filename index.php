@@ -1,29 +1,22 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(~0);
-echo "bpm...";
-
- 
-$db = '//10.10.0.31/bpm'; //e.g. '//192.168.1.1/orcl'
-$user = 'bpm';
-$pass = 'bpm';
-
-$conn = new PDO($db,$user,$pass);
- 
-  
-// $conn = oci_connect('bpm', 'bpm', '//10.10.0.31/bpm');  
-  
-if (!$conn) {  
-    echo "连接oracle  NOT 成功！";  
-    // $e = oci_error();  
-    // echo $e
-    // print htmlentities($e['message']);  
-  
-    exit;  
-  
-}else {  
-  
-    echo "连接oracle成功！";  
-  
-}  
-  
+echo "bpm...??????";
+$tns = " 
+(DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 10.10.0.31)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = bpm)
+    )
+  )
+       ";
+$db_username = "bpm";
+$db_password = "bpm";
+try{
+    $conn = new PDO("oci:dbname=".$tns,$db_username,$db_password);
+    echo "WORKING..."
+}catch(PDOException $e){
+    echo ($e->getMessage());
+}
