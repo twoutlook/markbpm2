@@ -15,11 +15,12 @@ echo "bpm...??????";
 //   )
 // XML;
 
-$db_username = "bpm";
-$db_password = "bpm";
+// $db_username = "bpm";
+// $db_password = "bpm";
 
 try{
-    $conn = new PDO("oci:dbname=".$tns,$db_username,$db_password);
+    // $conn = new PDO("oci:dbname=".$tns,$db_username,$db_password);
+    $conn=PDO("oci:dbname=//10.10.0.31/bpm,bpm,bpm");
     echo "WORKING..."
 }catch(PDOException $e){
     echo ($e->getMessage());
